@@ -17,7 +17,7 @@
       </v-radio-group>
       
     <div class="d-flex justify-center">
-      <v-btn :disabled="isPlaying || ratingSelection==null" @click="nextClicked">NEXT <v-icon>chevron_right</v-icon></v-btn>
+      <v-btn :disabled="isPlaying || ratingSelection==null || played==false" @click="nextClicked">NEXT <v-icon>chevron_right</v-icon></v-btn>
     </div>
 
     <div class="d-flex justify-center mt-2">
