@@ -95,6 +95,9 @@ const nextClicked = async () => {
       //clear the rating selection
       ratingSelection.value = null;
 
+      //reset 'played' value
+      played.value = false;
+
       //wait 500 ms
       await wait(500);
 

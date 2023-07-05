@@ -1,2 +1,2 @@
 # intelligibility-ratings-demo
- Intelligibility Ratngs Demo Project
+ Intelligibility Ratings Demo Project
