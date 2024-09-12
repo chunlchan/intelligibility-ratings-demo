@@ -1,9 +1,10 @@
 <template>
   <v-container v-if="ratingScreen">
+    <v-img class="mb-4" :src="stimuliList[index].image" height="300"></v-img>
     <div class="d-flex justify-center">
       <v-btn :disabled="isPlaying" @click="playSound">PLAY <v-icon>play_circle_filled</v-icon></v-btn>
     </div>
-
+    
       <v-radio-group v-model="ratingSelection" inline class="d-flex justify-center align-center mt-4 mb-4" >
         <p class="mt-2">Unintelligible</p>
         <v-radio label="1" value="1"></v-radio>
@@ -50,10 +51,11 @@ const fixationCrossScreen = ref(false);
 const { wait } = useWait();
 
 const stimuliList = [
-  'audio/nws_1.mp3',
-  'audio/nws_2.mp3',
-  'audio/nws_3.mp3'
+  {audio:'audio/nws_1.mp3', image:'images/face1.jpg'},
+  {audio:'audio/nws_2.mp3', image:'images/face2.jpg'},
+  {audio:'audio/nws_3.mp3', image:'images/face3.jpg'}
 ];
+
 
 const playSound = () => {
   console.log("play sound")
@@ -61,7 +63,7 @@ const playSound = () => {
   isPlaying.value = true;
   Howler.stop();
   const sound = new Howl({
-    src: stimuliList[index.value],
+    src: stimuliList[index.value].audio,
     onload: () => {
       sound.play();
     },
